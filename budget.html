@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget - Personal Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Budget</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="budget.html">Budget</a>
+            <a href="reports.html">Reports</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Set a New Budget</h2>
+            <form id="budget-form">
+                <label for="budget-name">Budget Name:</label>
+                <input type="text" id="budget-name" required>
+                <label for="budget-amount">Amount:</label>
+                <input type="number" id="budget-amount" step="0.01" required>
+                <label for="budget-period">Period:</label>
+                <select id="budget-period">
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+                <button type="submit">Set Budget</button>
+            </form>
+        </section>
+        <section>
+            <h2>Current Budgets</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Spent</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="budget-list">
+                    <!-- Budgets will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Personal Finance Tracker</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

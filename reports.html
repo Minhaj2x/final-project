@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Personal Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Reports</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="budget.html">Budget</a>
+            <a href="reports.html">Reports</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Spending by Category</h2>
+            <canvas id="category-chart"></canvas>
+        </section>
+        <section>
+            <h2>Monthly Expenses</h2>
+            <canvas id="monthly-chart"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Personal Finance Tracker</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        // Example chart initialization
+        const ctxCategory = document.getElementById('category-chart').getContext('2d');
+        const categoryChart = new Chart(ctxCategory, {
+            type: 'pie',
+            data: {
+                labels: ['Food', 'Rent', 'Utilities', 'Other'],
+                datasets: [{
+                    label: 'Spending by Category',
+                    data: [300, 500, 200, 100],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+                }]
+            }
+        });
+
+        const ctxMonthly = document.getElementById('monthly-chart').getContext('2d');
+        const monthlyChart = new Chart(ctxMonthly, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Monthly Expenses',
+                    data: [200, 300, 400, 500, 600, 700],
+                    backgroundColor: '#36A2EB',
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
